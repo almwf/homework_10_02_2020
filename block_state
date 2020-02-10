@@ -1,0 +1,43 @@
+block_state_funct () {
+	case ${BLOCK_STATE[`expr $i - 1`]} in
+		00) block_state_var=свободен
+		    ;;
+		01) block_state_var=норма
+		    ;;
+		02) block_state_var=шлейф
+		    ;;
+		03) block_state_var=предавария
+		    ;;
+		04) block_state_var=авария
+		    ;;
+	esac
+}
+
+type_funct ()  {
+	case ${TYPE_VER_BLOCK[` expr $i \* 2`]} in
+		40) type_block_var=БП-60
+		    ;;
+		47) type_block_var=8Е1
+		    ;;
+		48) type_block_var=ЦК
+		    ;;
+		23) type_block_var=ТЧ
+		    ;;
+		25) type_block_var=ОЦК
+		    ;;
+		63) type_block_var=C1-И
+		    ;;
+		4E) type_block_var=КУ-S
+		    ;;
+		00) type_block_var=нет\ блока
+		    ;;
+		32) type_block_var=RS232
+		    ;;
+		5C) type_block_var=RS485
+		    ;;
+		31) type_block_var=ТК
+		    ;;
+		1D) type_block_var=МК8
+		    ;;
+	esac
+}
